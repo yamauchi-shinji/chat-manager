@@ -51,3 +51,10 @@
 ### Association
 - belongs_to :room
 - belongs_to :user
+
+## blacklist
+
+| Column | Type    | Options                    |
+| ------ | ------- | -------------------------- |
+| word   | string  | null: false                |
+| flag   | boolean | null: false, default: true |   
