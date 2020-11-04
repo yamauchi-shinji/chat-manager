@@ -1,4 +1,4 @@
-class Role < ApplicationRecord
+class Role < ActiveHash::Base
   self.data = [
     { id: 1, name: '一般ユーザ' },
     { id: 2, name: 'オペレーター' },
