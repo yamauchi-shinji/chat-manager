@@ -1,0 +1,15 @@
+<h1>about me</h1>
+<% @users.each do |user|%>
+<%= form_with model: user, url:users_change_path, local: true do |f| %>
+  <h3>ユーザーID</h3>
+  <%= f.text_area :id %>
+  <h3>ユーザー名</h3>
+  <%= f.text_area :name %>
+  <h3>メールアドレス</h3>
+  <%= f.text_area :email %>
+  <%# <%= user.email %> 
+  <h3>役割</h3>
+  <%= f.collection_select(:role_id, Role.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+  <%= f.submit "適用"%>
+<% end %>
+<%end%>
