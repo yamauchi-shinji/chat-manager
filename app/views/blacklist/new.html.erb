@@ -1,0 +1,14 @@
+<% @blacklists.each do |list| %>
+<h3>ワード</h3>
+<%= list.word%>
+<h3>有効無効</h3>
+<%= list.flag%>
+<% end %>
+
+<%= form_with model:@blacklist, url: blacklist_index_path, local: true do |f| %>
+  <h3>ワード</h3>
+  <%= f.text_area :word %>
+  <h3>有効無効</h3>
+  <%= f.text_area :flag %>
+   <%= f.submit "適用"%>
+<% end %>
