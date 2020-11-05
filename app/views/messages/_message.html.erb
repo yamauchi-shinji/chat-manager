@@ -12,7 +12,18 @@
   <div class="lower-message">
     <div class="message-content">
       <!-- 投稿したメッセージ内容を記述する -->
-      <%= message.content %>
+      <% edit_message = message.content%>
+      <% @blacklist.each do |list| %>
+        <% if message.content.include?(list.word) && list.flag %>
+          <% str = ""%>
+          <% num = list.word.length %>
+          <% num.times do %>
+            <% str += "※" %>
+          <% end %>
+          <% edit_message = edit_message.gsub(list.word, str ) %>
+        <% end %>
+      <% end %>
+      <%= edit_message %>
     </div>
     <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
   </div>

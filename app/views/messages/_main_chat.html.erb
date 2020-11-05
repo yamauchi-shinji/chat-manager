@@ -11,6 +11,7 @@
   <div class="right-header">
     <% if  @room.master == current_user.id %>
       <div class="header-button">
+      <%= link_to "ブラックリスト", new_blacklist_path %>
       <%= link_to "ユーザー", users_show_path %>
         <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
       </div>
