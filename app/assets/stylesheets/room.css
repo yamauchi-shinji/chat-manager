@@ -45,3 +45,11 @@ li {
   font-weight: bold;
   text-align: right;
 }
+.new_chat_room {
+  background-color: white;
+  margin: 50px;
+  padding: 30px;
+  width: 80%;
+  height: 50%;
+  border-style: solid;
+}

@@ -1,14 +1,23 @@
-<% @blacklists.each do |list| %>
-<h3>ワード</h3>
-<%= list.word%>
-<h3>有効無効</h3>
-<%= list.flag%>
-<% end %>
-
-<%= form_with model:@blacklist, url: blacklist_index_path, local: true do |f| %>
-  <h3>ワード</h3>
-  <%= f.text_area :word %>
-  <h3>有効無効</h3>
-  <%= f.text_area :flag %>
-   <%= f.submit "適用"%>
-<% end %>
+<%= render "shared/header" %>
+<div class="table_list">
+  <table border="1">
+    <tr>
+      <th>ワード</th><th>有効無効</th>
+    </tr>
+    <% @blacklists.each do |list| %>
+      <tr>
+        <td><%= list.word%></td>
+        <td><%= list.flag%></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+<div class="input_word">
+  <%= form_with model:@blacklist, url: blacklist_index_path, local: true do |f| %>
+    <h3>ワード</h3>
+    <%= f.text_area :word, class:"items-text" %>
+    <h3>有効無効</h3>
+    <%= f.text_area :flag %>
+     <%= f.submit "適用"%>
+  <% end %>
+</div>

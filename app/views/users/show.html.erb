@@ -1,15 +1,20 @@
-<h1>about me</h1>
-<% @users.each do |user|%>
-<%= form_with model: user, url:users_change_path, local: true do |f| %>
-  <h3>ユーザーID</h3>
-  <%= f.text_area :id %>
-  <h3>ユーザー名</h3>
-  <%= f.text_area :name %>
-  <h3>メールアドレス</h3>
-  <%= f.text_area :email %>
-  <%# <%= user.email %> 
-  <h3>役割</h3>
-  <%= f.collection_select(:role_id, Role.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-  <%= f.submit "適用"%>
-<% end %>
-<%end%>
+<%= render "shared/header" %>
+<div align="center">
+<h1>ユーザー管理</h1>
+<table border="1">
+  <tr>
+    <th>ユーザーID</th><th>ユーザー名</th><th>メールアドレス</th><th>役割</th><th></th>
+  </tr>
+  <% @users.each do |user|%>
+    <%= form_with model: user, url:users_change_path, local: true do |f| %>
+      <tr>
+        <td><%= f.text_area :id, class: "users-text" %></td>
+        <td><%= f.text_area :name, class: "users-text" %></td>
+        <td><%= f.text_area :email, class: "users-text" %></td> 
+        <td><%= f.collection_select(:role_id, Role.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %></td>
+        <td><%= f.submit "適用"%></td>
+      </tr>
+    <% end %>
+  <%end%>
+</table>
+</div>

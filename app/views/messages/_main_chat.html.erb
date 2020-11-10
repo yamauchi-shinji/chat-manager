@@ -2,17 +2,15 @@
   <div class="left-header">
     <div class="header-title">
       <%= @room.name %>
-    </div>
-  </div>
-  メンバー：
+      メンバー：
   <% @room.users.each do |user| %>
     <%=user.name%>
   <% end %>
+    </div>
+  </div>
   <div class="right-header">
-    <% if  @room.master == current_user.id %>
+    <% if  @room.master == current_user.id || current_user.role_id == 3 %>
       <div class="header-button">
-      <%= link_to "ブラックリスト", new_blacklist_path %>
-      <%= link_to "ユーザー", users_show_path %>
         <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
       </div>
     <% end %>

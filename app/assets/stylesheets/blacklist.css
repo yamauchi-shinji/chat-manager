@@ -1,0 +1,25 @@
+.table_list {
+  background-color: white;
+  margin: 50px;
+  padding: 30px;
+  width: 80%;
+  height: 50%;
+}
+
+.input_word {
+  background-color: white;
+  margin: 50px;
+  padding: 30px;
+  width: 80%;
+  height: 50%;
+  border-style: solid;
+}
+.items-text {
+  width: 30%;
+  height: 30px;
+  /* padding: 16px 16px 8px; */
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+}

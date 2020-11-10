@@ -1,0 +1,22 @@
+header{
+  height: 70px;
+  width: 100%;
+  background-color: #253141;
+}
+.top_header-button {
+  margin:20px;
+}
+
+.top_header-button a {
+  text-decoration: none;
+  border: 1px solid darkred;
+  color: darkred;
+  padding: 20px;
+  background-color: white;
+}
+.top_header-left {
+  float: left;
+}
+.top_header-right {
+  float: right;
+}
