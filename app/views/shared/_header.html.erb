@@ -1,0 +1,14 @@
+<header>
+  <div class="top_header-right">
+    <div class="top_header-button">
+      <%= link_to "chat-manage", root_path %>
+      <% if current_user.role_id >= 2 %>
+      <%= link_to "ブラックリスト", new_blacklist_path %>
+      <% end %>
+      <% if current_user.role_id == 3 %>
+      <%= link_to "ユーザー", users_show_path %>
+      <% end %>
+        <%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+    </div>
+  </div>
+</header>
