@@ -77,4 +77,4 @@ image_processing
 | Column | Type    | Options                    |
 | ------ | ------- | -------------------------- |
 | word   | string  | null: false                |
-| flag   | boolean | null: false, default: true |   
+| flag   | boolean | null: false, default: true |
