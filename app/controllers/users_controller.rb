@@ -12,6 +12,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    if current_user.role_id != 3
+      redirect_to root_path
+    end
     @users = User.all
   end
   
